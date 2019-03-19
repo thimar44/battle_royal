@@ -17,11 +17,22 @@ public class Jeu {
     }
 
     private void combattre() {
+        while (!finDeLaPartie) {
 
+            numeroDuProcainJoueur = changerDeJoueur(numeroDuProcainJoueur);
+        }
 
     }
 
-
+    private int changerDeJoueur(int joueurActuel) {
+        if (joueurActuel == 1 ) {
+            return 2;
+        } else if (joueurActuel == 2) {
+            return 1;
+        } else {
+            throw new IllegalArgumentException("Un partie ne peut avoir qu'un joueur n°1 et un joueur n°2");
+        }
+    }
 
 
 
